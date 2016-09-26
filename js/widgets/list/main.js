@@ -95,12 +95,12 @@ define(["jquery","underscore","knockout","config"],function($,_,ko,config) {
 			var $domBooks = self.$holder.children();
 			for (var i=0;i<$domBooks.length;i++) {
 				var domBookHeight = self.getBookDomNodeOuterHeight($domBooks[i]);
-//				hRemoved += domBookHeight;
-//				removeCnt++;
-//				if (hRemoved>=screensToRemove*h || removeCnt>=self.visibleBooks().length) break;
-				if (hRemoved+domBookHeight>=screensToRemove*h || removeCnt>=self.visibleBooks().length) break;
 				hRemoved += domBookHeight;
 				removeCnt++;
+				if (hRemoved>=screensToRemove*h || removeCnt>=self.visibleBooks().length) break;
+//				if (hRemoved+domBookHeight>=screensToRemove*h || removeCnt>=self.visibleBooks().length) break;
+//				hRemoved += domBookHeight;
+//				removeCnt++;
 			}
 			if (removeCnt>=self.visibleBooks().length) {
 				self.$container.scrollTop(0);
