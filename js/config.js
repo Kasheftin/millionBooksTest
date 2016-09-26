@@ -2,6 +2,6 @@ define({
 	genres: ["Adventure","Drama","Fantasy","Horror","Mystery","Romance"],
 	count: 0,
 	sort: "id",
-	genreFilter: "",
-	genderFilter: ""
+	genreFilter: undefined,
+	genderFilter: "any"
 });

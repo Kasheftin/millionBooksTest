@@ -27,11 +27,9 @@ html,body {
 .list:focus {
 	outline: 0;
 }
-/*
 .list::-webkit-scrollbar {
 	display: none;
 }
-*/
 .list.-stretch {
 	display: flex;
 	align-items: center;

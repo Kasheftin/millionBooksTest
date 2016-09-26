@@ -4,7 +4,7 @@ define(["knockout","config"],function(ko,config) {
 		var self = this;
 		this.eventEmitter = o.core.eventEmitter;
 
-		this.genres = config.genres;
+		this.genres = config.genres.map(function(name,i){return{id:i,name:name}});
 		this.sort = ko.observable(config.sort);
 		this.genreFilter = ko.observable(config.genreFilter);
 		this.genderFilter = ko.observable(config.genderFilter);
