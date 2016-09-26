@@ -56,7 +56,7 @@ During the scroll there may appear 4 cases:
 * add items to the top;
 * remove items from the bottom;
 
-Each cases uses different logic.
+Each case uses different logic.
 
 The most complex case is adding items to the top while scrolling up. The system has to add several items so that there will be 4 screens over the current screen in total.
 But it does not know the real height of the element before it will be placed to the DOM. That's why it adds elements one after another and checks the result height every time.
