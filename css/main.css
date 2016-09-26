@@ -21,19 +21,28 @@ html,body {
 }
 
 .list {
+	position: relative;
 	flex-grow: 1;
-	overflow: auto;
-}
-.list:focus {
-	outline: 0;
-}
-.list::-webkit-scrollbar {
-	display: none;
+	overflow: hidden;
 }
 .list.-stretch {
 	display: flex;
 	align-items: center;
 	justify-content: center;
+}
+
+.list-scroller {
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	overflow-y: scroll;
+	overflow-x: hidden;
+	padding: 15px;
+}
+.list-scroller:focus {
+	outline: 0;
 }
 
 .books-wrapper {

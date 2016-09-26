@@ -175,7 +175,7 @@ define(["jquery","underscore","knockout","config"],function($,_,ko,config) {
 				_.defer(function() {
 					var firstDomBookHeight = self.getBookDomNodeOuterHeight(self.holder.firstElementChild);
 					hAdded += firstDomBookHeight;
- 					run(i-1);
+					run(i-1);
 				});
 			}
 			var firstIndex = (self.visibleBooks().length>0?_.first(self.visibleBooks()).i:-1);
@@ -335,14 +335,34 @@ define(["jquery","underscore","knockout","config"],function($,_,ko,config) {
 		return t.getFullYear()+"-"+(t.getMonth()<9?"0":"")+(t.getMonth()+1)+"-"+(t.getDate()<10?"0":"")+t.getDate();
 	}
 
+	M.prototype.getScrollbarWidth = function() {
+		var outer = document.createElement("div");
+		outer.style.visibility = "hidden";
+		outer.style.width = "100px";
+		outer.style.msOverflowStyle = "scrollbar";
+		document.body.appendChild(outer);
+		var widthNoScroll = outer.offsetWidth;
+		outer.style.overflow = "scroll";
+		var inner = document.createElement("div");
+		inner.style.width = "100%";
+		outer.appendChild(inner);
+		var widthWithScroll = inner.offsetWidth;
+		outer.parentNode.removeChild(outer);
+		return widthNoScroll - widthWithScroll;
+	}
+
 	M.prototype.domInit = function(o) {
 		var self = this;
-		this.container = o.firstDomChild;
-		this.$container = $(this.container);
+		this.$container = $(o.firstDomChild).find(".list-scroller").eq(0);
+		this.container = this.$container[0];
 		this.$wrapper = this.$container.find(".books-wrapper").eq(0);
 		this.wrapper = this.$wrapper[0];
 		this.$holder = this.$container.find(".books-holder").eq(0);
 		this.holder = this.$holder[0];
+
+		this.scrollbarWidth = this.getScrollbarWidth();
+		this.$container.css("right","-"+this.scrollbarWidth+"px");
+
 		this.$container.scroll(function() {
 			self.recalc("scroll");
 		});
