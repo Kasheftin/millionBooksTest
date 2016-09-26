@@ -1,0 +1,15 @@
+<div class="list" data-bind="css:{'-stretch':!count()}" tabindex="0">
+	<div data-bind="visible:!count()">List is empty</div>
+	<div class="books-wrapper">
+		<div class="books-holder" data-bind="visible:count,foreach:visibleBooks">
+			<div class="book">
+				<div class="book-title" data-bind="text:title+' by '+$parent.authors[author].name"></div>
+				<div class="book-sub">
+					ID: <span data-bind="text:id"></span>
+					Genre: <span data-bind="text:$parent.genres[genre]"></span>
+					Publish date: <span data-bind="text:$parent.formatDate(dt)"></span>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,39 @@
+<div class="header">
+	<div class="row">
+		<div class="col-sm-6">
+			<form class="form-horizontal">
+				<fieldset>
+					<legend>Settings</legend>
+					<div class="form-group">
+						<label class="col-md-4 control-label">Sort by: </label>
+						<div class="col-md-8">
+							<div class="btn-group btn-group-justified">
+								<a class="btn btn-default" data-bind="click:sort.bind($data,'id'),css:{'btn-primary':sort()=='id'}">ID</a>
+								<a class="btn btn-default" data-bind="click:sort.bind($data,'name'),css:{'btn-primary':sort()=='name'}">Book Name</a>
+								<a class="btn btn-default" data-bind="click:sort.bind($data,'author'),css:{'btn-primary':sort()=='author'}">Author Name</a>
+							</div>
+						</div>
+					</div>
+					<div class="form-group">
+					</div>
+			</form>
+		</div>
+		<div class="col-sm-6">
+			<form class="form-horizontal">
+				<legend>Generator settings</legend>
+				<div class="form-group">
+					<label class="col-md-4 control-label">Books count: </label>
+					<div class="col-md-8">
+						<div class="input-group">
+							<input type="number" class="form-control" data-bind="value:count" min="0">
+							<div class="input-group-btn">
+								<button class="btn btn-default" data-bind="click:updateCountBy.bind($data,100000)">+100T</button>
+								<button class="btn btn-default" data-bind="click:updateCountBy.bind($data,-100000)">-100T</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>

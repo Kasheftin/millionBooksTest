@@ -1,0 +1,28 @@
+{
+  "name": "MillionBooksTest",
+  "description": "Sample web page that shows a million items at once",
+  "main": "index.html",
+  "authors": [
+    "Alexey Kuznetsov <kasheftin@gmail.com> (http://rag.lt)"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "vendor",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "requirejs": "^2.3.2",
+    "knockout": "^3.4.0",
+    "ko-widget": "^1.1.0",
+    "domReady": "requirejs-domready#^2.0.1",
+    "underscore": "^1.8.3",
+    "eventEmitter": "^5.1.0",
+    "jquery": "^3.1.1"
+  }
+}
