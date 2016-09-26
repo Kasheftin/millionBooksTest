@@ -7,6 +7,7 @@ How to run it
 -------------
 
 Just place it in any environment that's able to return static files and open index.html.
+It's necessary to run bower update before the first run to load external gitignored libraries.
 The list is empty by default. There's a counter at the top left corner, any count of books may be specified.
 
 Demo
